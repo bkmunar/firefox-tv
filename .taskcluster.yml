@@ -73,7 +73,7 @@ tasks:
         - '--login'
         - '-cx'
         - >-
-          git fetch origin
+          git fetch {{ event.head.repo.url }} {{ event.head.repo.branch }}
           && git config advice.detachedHead false
           && git checkout {{event.head.sha}}
           && echo "--" > .adjust_token
